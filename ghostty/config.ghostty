@@ -1,0 +1,34 @@
+font-family = "Recursive Mono Casual Static"
+font-family = "RecMonoCasual Nerd Font"
+font-size = 15
+
+adjust-cell-height = 30%
+
+theme = Catppuccin Mocha 
+
+cursor-style = bar 
+cursor-style-blink = true 
+adjust-cursor-thickness = 150%
+
+background-opacity = 0.90
+background-blur = true 
+
+notify-on-command-finish = always
+notify-on-command-finish-action = bell 
+scrollbar = system 
+
+window-width = 77
+window-height = 17
+window-padding-x = 2
+window-padding-y = 2, 5
+window-padding-balance = true
+window-decoration = true 
+window-theme = ghostty
+
+clipboard-read = allow 
+clipboard-write = allow 
+clipboard-paste-protection = true 
+
+progress-style = true 
+
+auto-update = check
