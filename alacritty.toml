@@ -3,16 +3,15 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [window]
+dimensions = { columns = 80, lines = 20 }
 padding = { x = 10, y = 10 }
 dynamic_padding = true
 decorations = "full"
-title = "Alacritty@CachyOS"
-opacity = 1
+title = "Alacritty"
+dynamic_title = true
+opacity = 0.85
+blur = true
 decorations_theme_variant = "Dark"
-
-[window.dimensions]
-columns = 80 
-lines = 20
 
 [window.class]
 instance = "Alacritty"
@@ -81,7 +80,8 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
 
 [cursor]
-style = "Beam"
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 750
 vi_mode_style = "None"
 unfocused_hollow = true
 thickness = 0.20
