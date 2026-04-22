@@ -1,0 +1,36 @@
+---
+# Base style for modern C/C++
+BasedOnStyle: LLVM
+
+# Indentation setup
+IndentWidth: 4
+UseTab: Never
+ColumnLimit: 80
+
+# Brace placement: New line for functions, attached for loops
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true
+  AfterControlStatement: false
+  AfterClass: false
+  AfterEnum: false
+  AfterStruct: false
+
+# Legacy Parentheses Control (Pre-Clang 17)
+# These will simulate the behavior for older Clang versions
+SpacesInConditionalStatement: true   # Spaces in 'for ( ... )'
+SpacesInParentheses: true            # Spaces in 'printf( ... )'
+SpacesInCStyleCastParentheses: true  # Spaces in casts
+SpaceInEmptyParentheses: true        # Handles empty 'main()' padding
+
+# Spacing around keywords and operators
+SpaceBeforeParens: ControlStatements
+SpaceBeforeAssignmentOperators: true
+SpaceAroundPointerQualifiers: Both
+
+# Ensure 'void' in 'main( void )' is handled cleanly
+SpaceAfterCStyleCast: true
+
+SortIncludes: CaseInsensitive
+PointerAlignment: Right
+...
