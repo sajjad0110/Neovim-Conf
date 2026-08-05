@@ -2,23 +2,23 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 -- Set the background to light (essential for the Latte flavor)
-vim.opt.background = "light"
+-- vim.opt.background = "light"
 -- Set the default font for GUI nvim clients like neovide etc.
 -- vim.o.guifont = "Comic Code:h11" -- tv sized font
 -- vim.o.guifont = "TT2020 Style E:h14" -- As I'm using Tv as monitor
 -- vim.o.guifont = "Agave Nerd Font:h14"
-vim.o.guifont = "recursive mono casual static:h15"
--- vim.o.guifont = "rec mono casual:h14"
+vim.o.guifont = "recursive mono casual static:h12"
+-- vim.o.guifont = "rec mono casual:h12"
 
 -- Set the line height
-vim.o.linespace = 10 -- for comic code font
+vim.o.linespace = 6 -- for comic code font
 -- vim.o.linespace = 15 -- for TT2020 Style E font
 
 -- Make line numbers default
 -- vim.o.number = true -- Commenting it out because nvchad automatically has linenumbers enabled
 -- Relative line numbers
 vim.o.relativenumber = false
--- vim.o.numberwidth = 3
+vim.o.numberwidth = 3
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 5
@@ -89,6 +89,16 @@ vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
 })
 
 if vim.g.neovide then
+	-- neovide font rendering options
+  vim.g.neovide_subpixel_render_setting = "rgb" -- use "bgr" if preferred
+  -- for subpixel antialias = use "subpixelantialias"
+  -- for grayscale antialias = use "antialias"
+  vim.g.neovide_font_edging = "subpixelantialias" -- options: "antialias", "subpixelantialias", "alias"
+  vim.g.neovide_font_hinting = "slight" -- options: "full", "medium", "slight", "none"
+
+  -- scaling neovide scale factor
+  vim.g.neovide_scale_factor = 1.0
+  
   vim.g.neovide_cursor_animation_length = 0.13 -- Default is 0.13, increase for "softer" movement
   vim.g.neovide_cursor_trail_size = 0.8
   vim.g.neovide_cursor_smooth_blink = true
