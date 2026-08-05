@@ -95,9 +95,17 @@ if vim.g.neovide then
   -- for grayscale antialias = use "antialias"
   vim.g.neovide_font_edging = "subpixelantialias" -- options: "antialias", "subpixelantialias", "alias"
   vim.g.neovide_font_hinting = "slight" -- options: "full", "medium", "slight", "none"
-
   -- scaling neovide scale factor
   vim.g.neovide_scale_factor = 1.0
+  -- Fine Tune text contrast/gamma
+  -- gamma values control the thickness and weight of the glyphs.
+  -- lowering the value makess the font look bolder/thicker, while
+  -- raising them makes the fonts appear thinner.
+  vim.g.neovide_text_gamma = 1.1
+  -- contrast control sharpness and edge clarity between the text and
+  -- the background. increasing the value makes anti aliased font edges
+  -- look darker and punchier against dark backgrounds.
+  vim.g.neovide_text_contrast = 0.1
   
   vim.g.neovide_cursor_animation_length = 0.13 -- Default is 0.13, increase for "softer" movement
   vim.g.neovide_cursor_trail_size = 0.8
