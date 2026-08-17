@@ -113,6 +113,42 @@ end, { desc = "Run Go (Linux)" })
 
 -----------------------------------------------------------------------------
 
+------------------------
+------- C++ ------------
+------------------------
+
+-- Compile and Run C++ in a separate Linux Terminal
+
+vim.keymap.set("n", "<F8>", function()
+    vim.cmd("w")
+
+    local term = "konsole" -- change to your terminal
+    local file = vim.fn.expand("%:p")
+    local exe = vim.fn.expand("%:p:r")
+    local cpp_std = "c++17" -- set to c++20 or c++23 if you prefer
+
+    local bash_cmd = string.format(
+        "g++ -std=%s -Wall -Wextra '%s' -o '%s' $(pkg-config --cflags --libs sfml-graphics sfml-window sfml-system) && '%s'; echo ''; echo 'Press Enter to close...'; read",
+        cpp_std,
+        file,
+        exe,
+        exe
+    )
+
+    local final_cmd = string.format('%s -e bash -c "%s"', term, bash_cmd)
+
+    if term == "kitty" then
+        final_cmd = string.format('kitty bash -c "%s"', bash_cmd)
+    end
+
+    vim.fn.jobstart(final_cmd, { detach = true })
+end, { desc = "Compile and Run C++ with SFML (Linux)" })
+
+------------------------------------------------------------------------------
+
+
+
+
 -- Toggleterm open in the working directory
 vim.keymap.set("n", "<C-\\>", ":ToggleTerm dir=%:p:h<CR>", { noremap = true, silent = true })
 vim.keymap.set("t", "<C-\\>", [[<C-\><C-n><Cmd>ToggleTerm<CR>]], { noremap = true, silent = true })
