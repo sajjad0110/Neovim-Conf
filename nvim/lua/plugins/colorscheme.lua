@@ -1,10 +1,9 @@
 return {
-    { -- monokai-pro theme
-        "loctvl842/monokai-pro.nvim",
-        lazy = false,
+    {
+        "khoido2003/monokai-v2.nvim",
         priority = 1000,
         config = function()
-            require("monokai-pro").setup({
+            require("monokai-v2").setup({
                 -- Basic settings
                 transparent_background = false,
                 terminal_colors = true,
@@ -28,7 +27,7 @@ return {
                 },
 
                 -- Filter selection (default: classic for dark, light for light background)
-                filter = "light", -- classic | light | machine | octagon | pro | ristretto | spectrum
+                filter = "spectrum", -- classic | light | machine | octagon | pro | ristretto | spectrum
 
                 -- Day/night mode
                 day_night = {
@@ -57,12 +56,12 @@ return {
                         bold = true,
                     },
                     indent_blankline = {
-                        context_highlight = "pro", -- default | pro
+                        context_highlight = "default", -- default | pro
                         context_start_underline = false,
                     },
                 },
             })
-            vim.cmd.colorscheme("monokai-pro")
+            vim.cmd("colorscheme monokai-v2")
         end,
     },
 
